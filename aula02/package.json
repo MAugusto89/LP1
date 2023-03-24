@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "join": "^3.0.0",
+    "prompt-sync": "^4.2.0",
+    "reverse": "^4.0.1",
+    "split": "^1.0.1",
+    "str": "^0.7.1"
+  }
+}

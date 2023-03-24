@@ -1,0 +1,28 @@
+Exercício 3: As classes Aviao, Passageiro e Funcionario em JavaScript:
+Suponha que você foi contratado para desenvolver um sistema de gerenciamento de vôos para uma companhia
+aérea. Para isso, você precisa criar três classes: Aviao, Passageiro e Funcionario.
+A classe Aviao deve ter as seguintes propriedades:
+• modelo: string
+• numeroAssentos: número
+• numeroVoo: número
+• destino: string
+• capitao: objeto da classe Funcionario
+• coPiloto: objeto da classe Funcionario
+• comissarios: array de objetos da classe Funcionario
+• passageiros: array de objetos da classe Passageiro
+4
+A classe Passageiro deve ter as seguintes propriedades:
+• nome: string
+• documento: string (CPF ou RG)
+• assento: número
+A classe Funcionario deve ter as seguintes propriedades:
+• nome: string
+• documento: string (CPF ou RG)
+• cargo: string
+• funcao: string
+Crie métodos nas classes Aviao, Passageiro e Funcionario que permitam manipular as propriedades dessas
+classes. Por exemplo, na classe Aviao, crie métodos para adicionar e remover passageiros, adicionar e remover
+comissários, definir o capitão e o co-piloto, e assim por diante.
+Para testar o sistema, crie alguns objetos de exemplo das classes Aviao, Passageiro e Funcionario e realize
+algumas operações, como adicionar passageiros e comissários, definir o capitão e o co-piloto, e assim por
+diante
