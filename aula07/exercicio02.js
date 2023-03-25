@@ -10,6 +10,6 @@ function fetchData(url) {
         }, 2000);
     });
 }
-fetchData('https://api.example.com/data')
+fetchData('https://g1.globo.com')
     .then((response) => console.log(response))
     .catch((error) => console.error(error));
