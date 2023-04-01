@@ -15,7 +15,19 @@ class aviao {
         this.comissario.unshift(comissarios);
     }
     addPassageiro(passageiros){
-        this.passageiro.unshift(passageiros);
+        this.passageiro.push(passageiros);
+    }
+    removeFuncionario(comissarios) {
+        var index = this.comissario.indexOf(comissarios)
+        if (index > -1) {
+            this.comissario.splice(index, 1);
+        }
+    }
+    removePassageiro(passageiros) {
+        var index = this.passageiro.indexOf(passageiros)
+        if (index > -1) {
+            this.passageiro.splice(index, 1);
+        }
     }
     
 }
@@ -48,17 +60,28 @@ do {
     console.log('1/Passageiros - 2/Fucionários - 3/Encerrar');
     user = e(Number())
     if (user == 1) {
-        const userTp = e(Number('1/Adicionar - 2/Remover - 3/Sair'))
-        if (userTp == 1) {
+        console.log('1/Adicionar - 2/Remover - 3/Ver')
+        const userPass = e(Number())
+        if (userPass == 1) {
             var nome, documento, assento;
             nome = e(String('Nome: '))
             documento = e(String('Documento (RG/CPF): '))
             assento = e(String('Assento: '))
             let newPassageiro = new passageiros(nome, documento, assento);
-            newAviao.addComissario(newPassageiro)
+            newAviao.addPassageiro(newPassageiro)
+        } else if (userPass == 2) {
+            var removePas;
+            console.log("Digite o documento do passageiro: ");
+            removePas = e(Number())            
+            newAviao.removePassageiro(
+                newAviao.passageiro.find((passageiros) => (passageiros.documento = documento))
+            )
+        }else if(userPass == 3){
+            console.log(newAviao.passageiro);
         }
     } else if (user == 2) {
-        const userCom = e(Number('1/Adicionar - 2/Remover - 3/Sair'))
+        console.log('1/Adicionar - 2/Remover - 3/Ver');
+        const userCom = e(Number())
         if (userCom == 1) {
             var nome, documento, cargo, funcao;
             nome = e(String('Nome: '))
@@ -67,24 +90,16 @@ do {
             funcao = e(String('Função: '))
             let personAdd = new comissarios(nome, documento, cargo, funcao);
             newAviao.addComissario(personAdd)
+        } else if (userCom == 2) {
+            var removeFun;
+            console.log("Digite o documento do funcionário: ");
+            removeFun = e(Number())            
+            newAviao.removeFuncionario(
+                newAviao.comissario.find((comissarios) => (comissarios.documento = documento))
+            )
+        } else if(userCom == 3){
+            console.log(newAviao.comissario);
         }
-        if (userCom == 2) {
-            var remove;
-            console.log("Digite o documento do funcionario: ");
-            remove = e(Number())
-            for (let i = 0; i < comissarios.length; i++) {
-                if (comissarios[documento] === remove) {
-                    comissarios.splice(documento, documento);
-                    console.log("Funcionário removido com sucesso!");
-                }else{
-                    console.log("Funcionário não encontrado!");
-                }
-            }
-        }
-        /*if (userFun == 2) {
-             personRemove = e(String("Digite o número do funcionário para remover: "))
-             const remover = funcionario.splice(personRemove, personRemove)
-         }*/
     }
 } while ( user != 3);
 
